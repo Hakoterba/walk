@@ -3,8 +3,8 @@ import { Image } from 'expo-image';
 import { useNavigation } from 'expo-router';
 import { useLayoutEffect } from 'react';
 
-const PlaceholderImage = require('@/assets/images/ringDay2.png');
-const PlaceholderImage2 = require('@/assets/images/ringTotalWhite.png');
+const PlaceholderImage = require('@/assets/images/ringDay.png');
+const PlaceholderImage2 = require('@/assets/images/ringTotal.png');
 
 export default function Accueil() {
   const navigation = useNavigation();

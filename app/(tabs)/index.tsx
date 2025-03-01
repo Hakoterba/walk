@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Image } from 'expo-image'; 
 import { useNavigation } from 'expo-router';
 import { useLayoutEffect } from 'react';
@@ -7,13 +7,13 @@ const PlaceholderImage = require('@/assets/images/ringDay.png');
 const PlaceholderImage2 = require('@/assets/images/ringTotal.png');
 
 export default function Accueil() {
-  const navigation = useNavigation();
+    const navigation = useNavigation();
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      title: 'Jour X',  
-    });
-  }, [navigation]); 
+    useLayoutEffect(() => {
+        navigation.setOptions({
+        title: 'Hey ${pseudo} !',  
+        });
+    }, [navigation]); 
 
     return (
         <View style={ringDay.container}>
@@ -27,13 +27,13 @@ export default function Accueil() {
 
 const ringDay = StyleSheet.create({
     container: {
-        flex: 1,  // Utiliser flex: 1 pour que le conteneur prenne toute la hauteur
-        alignItems: "center",      // Centrer le contenu horizontalement
+        flex: 1,  
+        alignItems: "center",     
         backgroundColor: "#1E1E1E"
     },
     imageContainer: {
-        justifyContent: "center",  // Centrer les images verticalement
-        alignItems: "center"      // Centrer les images horizontalement
+        justifyContent: "center",
+        alignItems: "center"     
     },
     image: {
         width: 800, 

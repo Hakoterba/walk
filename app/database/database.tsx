@@ -1,6 +1,7 @@
 import * as SQLite from 'expo-sqlite';
 
 const dbPromise = SQLite.openDatabaseSync('app.db');
+const db = dbPromise;
 
 export const initDatabase = () => {
     const db = dbPromise;
@@ -27,22 +28,18 @@ export const initDatabase = () => {
 };
 
 export const addDaily = (pas: string, distance: number, parcoursActuel: number, pourcentageParcoursActuel: number, date: Date) => {
-    const db = dbPromise;
     db.execSync(`INSERT INTO daily (pas, distance, parcoursActuel, pourcentageParcoursActuel, date) 
         VALUES ('${pas}', '${distance}', '${parcoursActuel}', '${pourcentageParcoursActuel}', '${date}');`);
 };
 
 export const addParcours = (nom: string, distance: number) => {
-    const db = dbPromise;
     db.execSync(`INSERT INTO parcours (nom, distance) VALUES ('${nom}', '${distance}');`);
 };
 
 export const addUser = (pseudo: string, pdp: string) => {
-    const db = dbPromise;
     db.execSync(`INSERT INTO user (pseudo, pdp) VALUES ('${pseudo}', '${pdp}');`);
 };
 
 export const updateUser = (id: number, pseudo: string, pdp: string) => {
-    const db = dbPromise;
     db.execSync(`UPDATE user SET pseudo = '${pseudo}', pdp = '${pdp}' WHERE id = ${id};`);
 };
